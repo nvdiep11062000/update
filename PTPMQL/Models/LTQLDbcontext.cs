@@ -12,12 +12,11 @@ namespace PTPMQL.Models
         {
 
         }
-        public virtual DbSet<Account> Acounts { get; set; }
-        public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<Item> Items { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Account>()
-                .Property(e => e.UserName)
+            modelBuilder.Entity<Item>()
+                .Property(e => e.NameItem)
                 .IsUnicode(false);
         }
     }

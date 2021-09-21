@@ -7,11 +7,11 @@ using System.Web;
 
 namespace PTPMQL.Models
 {
-    [Table("Accounts")]
-    public class Account
+    [Table("Items")]
+    public class Item
     {
         [Key]
-        public string  UserName { get; set; }
-        public string PassWord { get; set; }
+        public string NameItem { get; set; }
+        public int IDItem { get; set; }
     }
 }
