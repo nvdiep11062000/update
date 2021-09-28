@@ -10,116 +10,116 @@ using PTPMQL.Models;
 
 namespace PTPMQL.Controllers
 {
-    public class ItemsController : Controller
+    public class EmployeesController : Controller
     {
         private LTQLDbcontext db = new LTQLDbcontext();
 
-        // GET: Items
+        // GET: Employees
         public ActionResult Index()
         {
-            return View(db.Items.ToList());
+            return View(db.Employees.ToList());
         }
 
-        // GET: Items/Details/5
-        public ActionResult Details(string id)
+        // GET: Employees/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Item item = db.Items.Find(id);
-            if (item == null)
+            Employee employee = db.Employees.Find(id);
+            if (employee == null)
             {
                 return HttpNotFound();
             }
-            return View(item);
+            return View(employee);
         }
 
-        // GET: Items/Create
+        // GET: Employees/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Items/Create
+        // POST: Employees/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NameItem,IDItem")] Item item)
+        public ActionResult Create([Bind(Include = "ID,Name")] Employee employee)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    db.Items.Add(item);
+                    db.Employees.Add(employee);
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
             }
             catch (Exception)
             {
-                ModelState.AddModelError("", "Khoa chinh bi trung.");
-                return View(item);
+                ModelState.AddModelError("", "Khoa chinh bi trung,vui long nhap lai.");
+                return View(employee);
             }
             
 
-            return View(item);
+            return View(employee);
         }
 
-        // GET: Items/Edit/5
-        public ActionResult Edit(string id)
+        // GET: Employees/Edit/5
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Item item = db.Items.Find(id);
-            if (item == null)
+            Employee employee = db.Employees.Find(id);
+            if (employee == null)
             {
                 return HttpNotFound();
             }
-            return View(item);
+            return View(employee);
         }
 
-        // POST: Items/Edit/5
+        // POST: Employees/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "NameItem,IDItem")] Item item)
+        public ActionResult Edit([Bind(Include = "ID,Name")] Employee employee)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(item).State = EntityState.Modified;
+                db.Entry(employee).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(item);
+            return View(employee);
         }
 
-        // GET: Items/Delete/5
-        public ActionResult Delete(string id)
+        // GET: Employees/Delete/5
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Item item = db.Items.Find(id);
-            if (item == null)
+            Employee employee = db.Employees.Find(id);
+            if (employee == null)
             {
                 return HttpNotFound();
             }
-            return View(item);
+            return View(employee);
         }
 
-        // POST: Items/Delete/5
+        // POST: Employees/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            Item item = db.Items.Find(id);
-            db.Items.Remove(item);
+            Employee employee = db.Employees.Find(id);
+            db.Employees.Remove(employee);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

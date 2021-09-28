@@ -7,13 +7,13 @@ namespace PTPMQL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Create_Table_Employee : IMigrationMetadata
+    public sealed partial class Create_Table_Student : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Create_Table_Employee));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Create_Table_Student));
         
         string IMigrationMetadata.Id
         {
-            get { return "202109210219406_Create_Table_Employee"; }
+            get { return "202109280217161_Create_Table_Student"; }
         }
         
         string IMigrationMetadata.Source

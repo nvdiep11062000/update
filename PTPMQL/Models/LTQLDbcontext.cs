@@ -13,6 +13,8 @@ namespace PTPMQL.Models
 
         }
         public virtual DbSet<Item> Items { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Item>()

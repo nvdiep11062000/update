@@ -11,10 +11,10 @@ namespace PTPMQL.Migrations
                 "dbo.Employees",
                 c => new
                     {
-                        Name = c.String(nullable: false, maxLength: 128),
-                        ID = c.Int(nullable: false),
+                        ID = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
                     })
-                .PrimaryKey(t => t.Name);
+                .PrimaryKey(t => t.ID);
             
         }
         

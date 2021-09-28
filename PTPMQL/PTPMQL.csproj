@@ -126,26 +126,31 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202109210116180_Create_Table_Account.cs" />
-    <Compile Include="Migrations\202109210116180_Create_Table_Account.designer.cs">
-      <DependentUpon>202109210116180_Create_Table_Account.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202109210219406_Create_Table_Employee.cs" />
-    <Compile Include="Migrations\202109210219406_Create_Table_Employee.Designer.cs">
-      <DependentUpon>202109210219406_Create_Table_Employee.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202109210249593_Create_Table_Item.cs" />
     <Compile Include="Migrations\202109210249593_Create_Table_Item.Designer.cs">
       <DependentUpon>202109210249593_Create_Table_Item.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109280121011_Create_Table_Employee.cs" />
+    <Compile Include="Migrations\202109280121011_Create_Table_Employee.Designer.cs">
+      <DependentUpon>202109280121011_Create_Table_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109280217161_Create_Table_Student.cs" />
+    <Compile Include="Migrations\202109280217161_Create_Table_Student.Designer.cs">
+      <DependentUpon>202109280217161_Create_Table_Student.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\LTQLDbcontext.cs" />
+    <Compile Include="Models\Process\StringProcess.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -189,6 +194,16 @@
     <Content Include="Views\Items\Details.cshtml" />
     <Content Include="Views\Items\Edit.cshtml" />
     <Content Include="Views\Items\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Students\Create.cshtml" />
+    <Content Include="Views\Students\Delete.cshtml" />
+    <Content Include="Views\Students\Details.cshtml" />
+    <Content Include="Views\Students\Edit.cshtml" />
+    <Content Include="Views\Students\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -207,14 +222,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202109210116180_Create_Table_Account.resx">
-      <DependentUpon>202109210116180_Create_Table_Account.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202109210219406_Create_Table_Employee.resx">
-      <DependentUpon>202109210219406_Create_Table_Employee.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109210249593_Create_Table_Item.resx">
       <DependentUpon>202109210249593_Create_Table_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109280121011_Create_Table_Employee.resx">
+      <DependentUpon>202109280121011_Create_Table_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109280217161_Create_Table_Student.resx">
+      <DependentUpon>202109280217161_Create_Table_Student.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
