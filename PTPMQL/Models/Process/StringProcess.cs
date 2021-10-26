@@ -22,6 +22,6 @@ namespace PTPMQL.Models.Process
             strPart = numPart = Regex.Match(id, @"\D+").Value;
             newKey = strPart + newNumPart;
             return newKey;
-        }
+        } 
     }
 }
